@@ -17,7 +17,7 @@ export default function Home() {
         <button onClick={fetchUserData} className="px-4 py-2 text-white bg-blue-500 rounded-md cursor-pointer">
           Generar
         </button>
-        <div className="font-bold text-gray-700">
+        <div className="font-bold text-gray-300">
           {loading && <p>Loading...</p>}
         </div>
       </div>
