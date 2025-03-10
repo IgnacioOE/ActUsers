@@ -23,7 +23,7 @@ export const useUsersApi =()=>{
                 phone: data.phone,
                 location: data.location.street.number + " " + data.location.street.name,
                 password: data.login.password,
-                picture: data.picture.thumbnail
+                picture: data.picture.large
             }
             setUser(user);
             setUserHistory((userList) => [...userList, user]);
@@ -36,5 +36,5 @@ export const useUsersApi =()=>{
     useEffect(() => {
         fetchUserData();
     }, []);
-    return {currentUser, userHistory, error, loading, fetchUserData};
+    return {currentUser, userHistory, error, loading, setUser, fetchUserData};
 }

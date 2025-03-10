@@ -37,7 +37,7 @@ export interface Login {
 }
 
 export interface Picture {
-    thumbnail: string;
+    large: string;
 }
 
 export interface Info {

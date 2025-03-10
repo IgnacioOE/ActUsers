@@ -1,8 +1,6 @@
 'use client'
 import React from 'react';
-import { useUsersApi } from '../hooks/apiUsers';
 import { Person } from '../types/http/person';
-import { useState } from 'react';
 
 interface UserData {
     user: Person;
@@ -10,14 +8,18 @@ interface UserData {
 export default function UserInfo ({user}: UserData) {
     
     return (
-        <div>
-            <img className="w-full" src={user.picture} alt={user.name} />
-            <h1>{user.name}</h1>
-            <p>{user.email}</p>
-            <p>{user.dob}</p>
-            <p>{user.location}</p>
-            <p>{user.phone}</p>
-            <p>{user.password}</p>
+    <div className="max-w-xl grid grid-cols-1 justify-items-center items-center rounded p-8 bg-white">
+        <img className="" src={user.picture} alt={user.name} />
+        <div className="px-6 py-4">                
+            <div className="font-bold text-xl mb-2 text-gray-700">{user.name}</div>
+            <div className="text-gray-500">
+                <p>Email: {user.email}</p>
+                <p>Birthday: {new Date(user.dob).toLocaleDateString()}</p>
+                <p>Address: {user.location}</p>
+                <p>Phone: {user.phone}</p>
+                <p>Password: {user.password}</p>
+            </div>
         </div>
+    </div>
     );
 }
